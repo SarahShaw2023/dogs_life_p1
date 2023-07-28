@@ -36,8 +36,30 @@ public class DogsHandlerTest {
     @Test
     public void add_several_dogs_return_number_of_dogs_match_number_added() {
 
-    }
+        // arrange
+        DogHandler d = new DogHandler(itsDogsRepo);
 
+        Dog d1 = new Dog();
+        d1.setName("Bruno");
+        d.addDog(d1);
+
+        Dog d2 = new Dog();
+        d2.setName("Fido");
+        d.addDog(d2);
+
+        Dog d3 = new Dog();
+        d3.setName("Fido");
+        d.addDog(d3);
+
+        int expectedResult = 3;
+
+        //Act
+        long actualResult = d.getNoOfDogs();
+
+        //Assert
+        assertEquals(expectedResult, actualResult);
+    }
+    /*
     //getDogByName (3 cases)
     @Test
     public void () {
@@ -61,4 +83,5 @@ public class DogsHandlerTest {
     public void () {
 
     }
+    */
 }
