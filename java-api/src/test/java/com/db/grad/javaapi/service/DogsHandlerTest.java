@@ -169,28 +169,32 @@ public class DogsHandlerTest {
 
         DogHandler d = new DogHandler(itsDogsRepo);
 
+        //dog is dog1 (added to make sure it remains unchanged)
         Dog dog = new Dog();
         dog.setName("Spot");
         d.addDog(dog);
 
+        //importantDog is dog2 (the only one that should have name updated)
         Dog importantDog = new Dog();
         importantDog.setName("Fido");
         d.addDog(importantDog);
 
         long expected = importantDog.getId();
 
+        //"dog" is dog3 (added to make sure it remains unchanged)
         dog = new Dog();
         dog.setName("Chelsea");
         d.addDog(dog);
 
         // act
-
+        //dog2 should only be changed, as indicated by the return value of the changed dog
         importantDog.setName("Charlie");
         long actual = d.updateDogDetails(importantDog);
 
         // assert
-
+        //Ensure target dog's id (dog2) and changed dog's id matches
         assertEquals(expected, actual);
+        //TODO: Maybe also verify dog2's name also actually updated
     }
     /*
 
