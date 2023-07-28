@@ -25,4 +25,9 @@ public class DogHandler {
 
         return dogs.size() == 1 ? dogs.get(0) : null;
     }
+
+    public Dog getDogById(int id) {
+        return itsDogsRepo.findById(id);
+
+    }
 }

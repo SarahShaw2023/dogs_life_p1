@@ -119,12 +119,40 @@ public class DogsHandlerTest {
         assertEquals(null, dog);
     }
 
-    /*
+
     //getDogById (2 cases)
     @Test
-    public void () {
+    public void check_if_dog_null_get_dog_id() {
+        // arrange
+        DogHandler d = new DogHandler(itsDogsRepo);
+
+        Dog spot1 = new Dog();
+        spot1.setId(5);
+        d.addDog(spot1);
+
+        // act
+        Dog dog = d.getDogById(6);
+
+        // assert
+        assertEquals(null, dog);
 
     }
+    @Test
+    public void check_if_dog_exist_get_id() {
+        // arrange
+        DogHandler d = new DogHandler(itsDogsRepo);
+
+        Dog spot1 = new Dog();
+        d.addDog(spot1);
+
+        // act
+        Dog dog = d.getDogById(1);
+
+        // assert
+        assertEquals(spot1, dog);
+
+    }
+    /*
 
     //updateDogDetails (1 case)
     @Test
