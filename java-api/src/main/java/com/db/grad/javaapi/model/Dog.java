@@ -6,12 +6,10 @@ public class Dog
     private String name;
 
     public Dog() {
-        id = 0; // change?
         name = "";
     }
 
     public Dog(String name) {
-        id = 0; // change?
         this.name = name;
     }
 

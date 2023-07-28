@@ -4,6 +4,7 @@ import com.db.grad.javaapi.model.Dog;
 import com.db.grad.javaapi.repository.DogsRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class DogHandler {
     private DogsRepository itsDogsRepo;
@@ -33,5 +34,17 @@ public class DogHandler {
 
     public long updateDogDetails(Dog dog) {
         return itsDogsRepo.save(dog);
+    }
+
+    // originally void return type
+    public boolean removeDog(int i) {
+
+        Dog dog = itsDogsRepo.findById(i);
+
+        if(dog == null)
+            return false;
+
+        itsDogsRepo.delete(dog);
+        return true;
     }
 }

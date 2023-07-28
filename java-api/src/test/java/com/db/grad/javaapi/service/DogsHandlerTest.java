@@ -6,7 +6,7 @@ import com.db.grad.javaapi.repository.DogsRepositoryStub;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DogsHandlerTest {
     private DogsRepository itsDogsRepo = new DogsRepositoryStub();
@@ -192,18 +192,22 @@ public class DogsHandlerTest {
 
         assertEquals(expected, actual);
     }
-    /*
-
-    //updateDogDetails (1 case)
-    @Test
-    public void () {
-
-    }
 
     //removeDog (1 case)
     @Test
-    public void () {
+    public void remove_dog_where_dog_does_not_exist() {
 
+        DogHandler d = new DogHandler(itsDogsRepo);
+
+        assertFalse(d.removeDog(1));
     }
-    */
+    @Test
+    public void remove_dog_where_dog_does_exists() {
+
+        DogHandler d = new DogHandler(itsDogsRepo);
+        d.addDog(new Dog());
+
+        assertTrue(d.removeDog(1));
+        assertFalse(d.removeDog(1));
+    }
 }
