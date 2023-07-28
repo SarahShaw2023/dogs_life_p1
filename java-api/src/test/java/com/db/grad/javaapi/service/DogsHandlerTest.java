@@ -32,4 +32,33 @@ public class DogsHandlerTest {
         //Assert
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void add_several_dogs_return_number_of_dogs_match_number_added() {
+
+    }
+
+    //getDogByName (3 cases)
+    @Test
+    public void () {
+
+    }
+
+    //getDogById (2 cases)
+    @Test
+    public void () {
+
+    }
+
+    //updateDogDetails (1 case)
+    @Test
+    public void () {
+
+    }
+
+    //removeDog (1 case)
+    @Test
+    public void () {
+
+    }
 }
