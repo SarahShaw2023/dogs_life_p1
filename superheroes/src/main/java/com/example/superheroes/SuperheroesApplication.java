@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.List;
 
 @SpringBootApplication
-public class SuperheroesApplication implements CommandLineRunner {
+public class SuperheroesApplication {
 
 	@Autowired
 	HeroService heroService;
@@ -19,11 +19,11 @@ public class SuperheroesApplication implements CommandLineRunner {
 		SpringApplication.run(SuperheroesApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		List<Hero> heroes = heroService.getHeroesStartingWithLetter("C");
-		for(Hero hero : heroes) {
-			System.out.println(hero);
-		}
-	}
+//	@Override
+//	public void run(String... args) throws Exception {
+//		List<Hero> heroes = heroService.getHeroesStartingWithLetter("C");
+//		for(Hero hero : heroes) {
+//			System.out.println(hero);
+//		}
+//	}
 }
