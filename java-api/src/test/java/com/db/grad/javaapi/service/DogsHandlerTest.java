@@ -59,13 +59,67 @@ public class DogsHandlerTest {
         //Assert
         assertEquals(expectedResult, actualResult);
     }
-    /*
+
     //getDogByName (3 cases)
     @Test
-    public void () {
+    public void get_dog_name_dog_does_not_exist() {
 
+        // arrange
+        DogHandler d = new DogHandler(itsDogsRepo);
+
+        Dog d1 = new Dog();
+        d1.setName("Bruno");
+        d.addDog(d1);
+
+        // act
+        Dog dog = d.getDogByName("Spot");
+
+        // assert
+        assertEquals(null, dog);
     }
 
+    @Test
+    public void get_dog_name_one_dog_exists() {
+
+        // arrange
+        DogHandler d = new DogHandler(itsDogsRepo);
+
+        Dog d1 = new Dog();
+        d1.setName("Spot");
+        d.addDog(d1);
+
+        // act
+        Dog dog = d.getDogByName("Spot");
+
+        // assert
+        assertEquals(d1, dog);
+    }
+    @Test
+    public void get_dog_name_multiple_dogs_exist() {
+
+        // arrange
+        DogHandler d = new DogHandler(itsDogsRepo);
+
+        Dog spot1 = new Dog();
+        spot1.setName("Spot");
+        d.addDog(spot1);
+
+        Dog spot2 = new Dog();
+        spot2.setName("Spot");
+        d.addDog(spot2);
+
+        Dog spot3 = new Dog();
+        spot3.setName("Spot");
+        d.addDog(spot3);
+
+        // act
+        Dog dog = d.getDogByName("Spot");
+
+        // assert
+        assertEquals(null, dog);
+    }
+
+    /*
     //getDogById (2 cases)
     @Test
     public void () {

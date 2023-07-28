@@ -5,6 +5,16 @@ public class Dog
     private long id;
     private String name;
 
+    public Dog() {
+        id = 0; // change?
+        name = "";
+    }
+
+    public Dog(String name) {
+        id = 0; // change?
+        this.name = name;
+    }
+
     public long getId() {
         return id;
     }
