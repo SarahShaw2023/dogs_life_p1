@@ -2,10 +2,10 @@ package com.example.superheroes.controller;
 
 import com.example.superheroes.Hero;
 import com.example.superheroes.service.HeroService;
+//import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,4 +26,14 @@ public class HeroController {
         return heroService.getHeroesStartingWithLetter(letter);
     }
 
+    @PostMapping("/heroes")
+    public HttpStatus saveNewHero(@RequestBody Hero hero){
+        Hero result = heroService.saveHero(hero);
+
+        if (result == null){
+            return HttpStatus.PRECONDITION_FAILED;
+        }else{
+            return HttpStatus.CREATED;
+        }
+    }
 }
