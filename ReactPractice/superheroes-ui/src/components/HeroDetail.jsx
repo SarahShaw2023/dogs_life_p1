@@ -18,7 +18,7 @@ const incrementCounter =()=>{
   return (
       <Card>
         <div className="imgContainer">
-          <Card.Img variant="top" src={images[props.info.alias.replaceAll(/\s/g, '')]} width="150px" />
+          <Card.Img variant="top" src={images[props.info.alias.replaceAll(/\s/g, '').replaceAll(/'/g, '')]} width="150px" />
         </div>
         <Card.Body>
             <Card.Title id={hero.id}>Alias: {hero.alias}</Card.Title>
