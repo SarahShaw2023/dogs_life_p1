@@ -10,5 +10,6 @@ values
     ('Floyd Lawton', 'Deadshot', 'Marksmaship', 4),
     ('Cecil Adams', 'Count Vertigo', 'Drug-dealing', 4),
     ('Damian Wayne', 'Robin', 'Swordsmanship', 5),
-    ('Dick Grayson', 'Nightwing', 'Acrobatics', 5)
+    ('Dick Grayson', 'Nightwing', 'Acrobatics', 5),
+    ('Ben', 'French BOI''s French Fry', 'Just Baguette', 2)
 ;
