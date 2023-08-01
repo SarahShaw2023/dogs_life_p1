@@ -27,6 +27,7 @@ import Deadshot from "./images/7.jpeg";
 import CountVertigo from "./images/8.jpeg";
 import Robin from "./images/9.jpeg";
 import Nightwing from "./images/10.jpeg";
+import FrenchBOIsFrenchFry from "./images/11.jpeg"
 
 const images = {
     Batman,
@@ -38,7 +39,8 @@ const images = {
     Deadshot,
     CountVertigo,
     Robin,
-    Nightwing
+    Nightwing,
+    FrenchBOIsFrenchFry
 }
 
 // const hero = {

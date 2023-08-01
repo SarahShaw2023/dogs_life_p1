@@ -2,6 +2,9 @@ import React from 'react'
 import HeroDetail from './HeroDetail'
 import Row from 'react-bootstrap/Row'
 import { useState } from 'react';
+import { getAllHeroes } from '../services/hero-service';
+import { useEffect } from 'react';
+
 
 const heroes = [
   {"id":1,"name":"Bruce Wayne","alias":"Batman","superpower":"Martial Arts","teamID":1},
@@ -17,11 +20,29 @@ const heroes = [
   ];
 
 const AllHeroes = () => {
+  const [heroes,setHeroes] = useState([]);
   const [total, setTotal] = useState(0);
+
   const totalCountHandler = (name) =>{
     console.log(name)
     setTotal(total+1);
-}
+  }
+
+  useEffect(()=>{
+    getHeroesFromAPI();}, 
+    []
+  );
+  const getHeroesFromAPI = ()=>{
+    getAllHeroes()
+    .then(res => {
+        setHeroes(res.data);
+    })
+    .catch(err => {
+        setHeroes([]);
+        console.log(err);
+    })
+  };
+
   // heroes.map(hero=>(
   //   console.log("AllHeros: " + hero)
   //  ))
